@@ -81,6 +81,13 @@ function generateSubnetTable(majorNetwork, prefix, hosts) {
     // Your logic to generate subnets based on majorNetwork, prefix, and hosts
     const subnets = finalSubnets(majorNetwork, prefix, hosts);
 
+    if (!subnets) {
+        let data = document.getElementById('data');
+        data.innerHTML = '<h2 style="color:red">Subneteo fallido!</h2>';
+
+        return false;
+    }
+
     // Populate the table with generated subnets
     subnets.forEach(subnet => {
         addRow(subnet);

@@ -1,3 +1,4 @@
+
 //clase subnet
 
 class Subnet {
@@ -219,35 +220,41 @@ function replaceCombination(ipAddress, newString, prefixLength) {
 function generateSubnets(majorAdd, prefix, hosts) {
     let hostBitsValue = hostBits(hosts);
     let netBits = 32 - prefix - hostBitsValue;
+    if (netBits < 0) {
 
-    const bitCombinations = generateBinaryCombinations(netBits);
+        return false;
+    } else {
 
-    const subnets = [];
+        const bitCombinations = generateBinaryCombinations(netBits);
 
-    let bitToStart = prefix + 1;
-    prefix += netBits;
+        const subnets = [];
 
-    for (let i = 0; i < 2 ** netBits; i++) {
-        let ipAddress = addressToBinary(majorAdd);
+        let bitToStart = prefix + 1;
+        prefix += netBits;
 
-        let sub = new Subnet();
-        sub.binAddress = replaceCombination(ipAddress, bitCombinations[i], bitToStart);
-        sub.address = binaryToDecimalAddress(sub.binAddress);
-        sub.prefix = prefix;
-        sub.bitsHost = hostBitsValue;
-        sub.numHosts = hosts;
-        sub.allocatedHosts = 2 ** hostBitsValue - 2;
+        for (let i = 0; i < 2 ** netBits; i++) {
+            let ipAddress = addressToBinary(majorAdd);
 
-        const hostCombinations = generateBinaryCombinations(sub.bitsHost);
+            let sub = new Subnet();
+            sub.binAddress = replaceCombination(ipAddress, bitCombinations[i], bitToStart);
+            sub.address = binaryToDecimalAddress(sub.binAddress);
+            sub.prefix = prefix;
+            sub.bitsHost = hostBitsValue;
+            sub.numHosts = hosts;
+            sub.allocatedHosts = 2 ** hostBitsValue - 2;
 
-        sub.minHost = binaryToDecimalAddress(replaceCombination(sub.binAddress, hostCombinations[1], prefix + 1));
-        sub.maxHost = binaryToDecimalAddress(replaceCombination(sub.binAddress, hostCombinations[hostCombinations.length - 2], prefix + 1));
-        sub.broadcast = binaryToDecimalAddress(replaceCombination(sub.binAddress, hostCombinations[hostCombinations.length - 1], prefix + 1));
+            const hostCombinations = generateBinaryCombinations(sub.bitsHost);
 
-        subnets.push(sub);
+            sub.minHost = binaryToDecimalAddress(replaceCombination(sub.binAddress, hostCombinations[1], prefix + 1));
+            sub.maxHost = binaryToDecimalAddress(replaceCombination(sub.binAddress, hostCombinations[hostCombinations.length - 2], prefix + 1));
+            sub.broadcast = binaryToDecimalAddress(replaceCombination(sub.binAddress, hostCombinations[hostCombinations.length - 1], prefix + 1));
+
+            subnets.push(sub);
+        }
+
+        return subnets;
     }
 
-    return subnets;
 }
 
 //función para generar subredes en base a una dirección decimal, su prefijo de mácara y un arreglo de hosts ordenados de mayor a menor
@@ -264,6 +271,11 @@ function finalSubnets(majorAdd, prefix, hosts) {
 
         if (!results.length) {
             subnetting = generateSubnets(majorAdd, prefix, numHosts);
+            if (!subnetting) {
+
+                return false;
+            }
+
         } else {
             if (unasignedSubnets.length) {
                 let auxSubnet = unasignedSubnets[0];

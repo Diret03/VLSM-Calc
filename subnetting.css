@@ -5,6 +5,7 @@ header {
     font-size: 1.5em;
     color: #333;
     border-bottom: 5px solid #333;
+    width: 100%;
 
 
 }
@@ -118,6 +119,10 @@ a:hover {
 @media only screen and (max-width: 600px) {
     #subnetTable {
         overflow-x: auto;
+    }
+
+    #subnetTable tr td:first-child {
+        margin-top: 7px;
     }
 
     #subnetTable th,

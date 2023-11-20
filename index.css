@@ -1,3 +1,11 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-color: #669bbc;
     padding: 10px;
@@ -5,8 +13,6 @@ header {
     font-size: 1.5em;
     color: #333;
     border-bottom: 5px solid #333;
-
-
 }
 
 header h1 {
@@ -14,7 +20,6 @@ header h1 {
 }
 
 body {
-    margin: 0;
     background-color: #e5e5e5;
     font-family: "Merriweather", sans-serif;
 }
@@ -23,54 +28,22 @@ main {
     display: flex;
     justify-content: center;
     margin-top: 100px;
-
 }
 
 #tabla {
+    width: 100%;
+    max-width: 500px;
     background-color: #669bbc;
     text-align: center;
     border: 3px #333 solid;
     padding: 20px;
 }
 
-
-#tabla tbody input {
-    padding: 3px 0px;
-    background-color: #f8f9fa;
-    border: 1px solid #1d3557;
-    text-align: center;
-}
-
-#numSubnet {
-    width: 50px;
-}
-
-#submit {
-    width: 150px;
-    padding: 5px 10px;
-    font-size: 1.15em;
-    font-weight: bold;
-    border: 1px solid #1d3557;
-    background-color: #ced4da;
-
-}
-
-#changeSubnet {
-    width: 80px;
-    padding: 10px 5px;
-    font-weight: bold;
-    border: 1px solid #1d3557;
-    background-color: #ced4da;
-    margin-left: 7px;
-}
-
-#changeSubnet:hover,
-#submit:hover {
-    background-color: #1d3557;
-    color: white;
-    border: 1px solid #f8f9fa;
-}
-
-#tabla tbody tr:first-child {
-    margin-bottom: 5px;
+@media (min-width: 768px) {
+    main {
+        margin-top: 0;
+        height: calc(100% - 60px);
+        /* header height */
+        align-items: center;
+    }
 }
