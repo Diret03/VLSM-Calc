@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+    <script src="conversor.js"></script>
+    <title>Subnetting VLSM</title>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Calculadora VLSM</h1>
+    </header>
+
+
+    <main>
+
+        <form action="" method="POST">
+            <table id="tabla">
+                <tbody>
+                    <tr>
+                        <td>Red Padre</td>
+                        <td><input type="text" name="majorNetwork" id="majorNetwork" placeholder="Ingresar red padre" />
+                            <input type="text" name="prefix" id="prefix" placeholder="Prefijo de máscara" />
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>Subredes</td>
+                        <td>
+                            <table id="subnetTable">
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tamaño host</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="net_1" class="name" value="A"></td>
+                                    <td><input type="text" name="size_1" class="size"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="net_2" class="name" value="B"></td>
+                                    <td><input type="text" name="size_2" class="size"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="net_3" class="name" value="C"></td>
+                                    <td><input type="text" name="size_3" class="size"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="net_4" class="name" value="D"></td>
+                                    <td><input type="text" name="size_4" class="size"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="net_5" class="name" value="E"></td>
+                                    <td><input type="text" name="size_5" class="size"></td>
+                                </tr>
+                                <tr>
+                                    <td>Numero de subredes</td>
+                                    <td>
+                                        <input type="number" name="" id="numSubnet" value="5">
+                                        <button id="changeSubnet">Cambiar</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="reset" id="submit">Subir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

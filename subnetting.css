@@ -1,0 +1,151 @@
+header {
+    background-color: #669bbc;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 5px solid #333;
+
+
+}
+
+header h1 {
+    margin: 10px;
+}
+
+body {
+    margin: 0;
+    background-color: #e5e5e5;
+    font-family: "Merriweather", sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+#data {
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+#data p {
+    font-weight: bold;
+
+}
+
+#data span {
+    color: #0077b6;
+}
+
+#data p,
+#data span {
+    display: inline-block;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 1.15em;
+}
+
+#subnetTable {
+
+    background-color: #669bbc;
+    text-align: center;
+    border: 3px #333 solid;
+    padding: 5px;
+}
+
+
+
+th,
+td {
+    border: 1px solid #03045e;
+    padding: 8px;
+    text-align: left;
+    background-color: #e5e5e5;
+}
+
+#subnetTable .nameSub {
+    width: 10%;
+}
+
+#subnetTable .numHosts {
+    width: 7%;
+}
+
+#subnetTable .prefix {
+    width: 6%;
+}
+
+
+#return {
+
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+button {
+    padding: 15px 50px;
+    font-weight: bold;
+    border: 3px solid #1d3557;
+    background-color: #ced4da;
+
+}
+
+
+button a {
+
+    color: black;
+    text-decoration: none;
+
+}
+
+button:hover {
+    background-color: #1d3557;
+
+    border: 1px solid #f8f9fa;
+}
+
+a:hover {
+    color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #subnetTable {
+        overflow-x: auto;
+    }
+
+    #subnetTable th,
+    #subnetTable td {
+        white-space: nowrap;
+        min-width: 80px;
+    }
+
+    #subnetTable .nameSub,
+    #subnetTable .numHosts,
+    #subnetTable .prefix {
+        width: auto;
+    }
+
+    #subnetTable thead th,
+    #subnetTable tbody th,
+    #subnetTable tbody td {
+        display: block;
+        text-align: center;
+    }
+
+    #subnetTable tbody th,
+    #subnetTable tbody td {
+        display: block;
+        text-align: center;
+    }
+
+    #subnetTable tbody td {
+        text-align: center;
+    }
+}

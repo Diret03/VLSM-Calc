@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="subnetting.css">
+    <script src="app.js"></script>
+    <script src="conversor.js"></script>
+    <script src="subnetting.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+    <title>Resultados</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Suberedes obtenidas</h1>
+    </header>
+    <section id="data">
+
+        <div class="line">
+            <p>Red padre:</p>
+            <span id="majorNet"></span>
+        </div>
+
+        <div class="line">
+            <p>Máscara de red:</p>
+            <span id="mask"></span>
+        </div>
+
+    </section>
+    <main>
+
+
+        <table id="subnetTable">
+            <thead>
+                <tr>
+                    <th class="nameSub">Nombre subred</th>
+                    <th class="numHosts">Hosts necesarios</th>
+                    <th class="numHosts">Tamaño asignado</th>
+                    <th>Dirección binario</th>
+                    <th>Dirección decimal</th>
+                    <th class="prefix">Prefijo máscara</th>
+                    <th>Máscara de red</th>
+                    <th>Primer host</th>
+                    <th>Último host</th>
+                    <th>Broadcast</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+
+    </main>
+
+    <section id="return">
+        <button> <a href="index.html">Nuevo cálculo</a></button>
+
+    </section>
+
+</body>
+
+</html>
