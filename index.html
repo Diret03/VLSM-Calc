@@ -27,8 +27,9 @@
                 <tbody>
                     <tr>
                         <td>Red Padre</td>
-                        <td><input type="text" name="majorNetwork" id="majorNetwork" placeholder="Ingresar red padre" />
-                            <input type="text" name="prefix" id="prefix" placeholder="Prefijo de máscara" />
+                        <td id="majorNetTD"><input type="text" name="majorNetwork" id="majorNetwork"
+                                placeholder="Ingresar red padre" />
+                            <input type="number" name="prefix" id="prefix" placeholder="Prefijo de máscara" />
                         </td>
 
 
@@ -37,37 +38,49 @@
                         <td>Subredes</td>
                         <td>
                             <table id="subnetTable">
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tamaño host</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" name="net_1" class="name" value="A"></td>
-                                    <td><input type="text" name="size_1" class="size"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" name="net_2" class="name" value="B"></td>
-                                    <td><input type="text" name="size_2" class="size"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" name="net_3" class="name" value="C"></td>
-                                    <td><input type="text" name="size_3" class="size"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" name="net_4" class="name" value="D"></td>
-                                    <td><input type="text" name="size_4" class="size"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" name="net_5" class="name" value="E"></td>
-                                    <td><input type="text" name="size_5" class="size"></td>
-                                </tr>
-                                <tr>
-                                    <td>Numero de subredes</td>
-                                    <td>
-                                        <input type="number" name="" id="numSubnet" value="5">
-                                        <button id="changeSubnet">Cambiar</button>
-                                    </td>
-                                </tr>
+                                <tbody id="subnetTbody">
+                                    <tr>
+                                        <td>Nombre</td>
+                                        <td>Tamaño host</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="net_1" class="name" value="A"></td>
+                                        <td><input type="number" name="size_1" class="size"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="net_2" class="name" value="B"></td>
+                                        <td><input type="number" name="size_2" class="size"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="net_3" class="name" value="C"></td>
+                                        <td><input type="number" name="size_3" class="size"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="net_4" class="name" value="D"></td>
+                                        <td><input type="number" name="size_4" class="size"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="net_5" class="name" value="E"></td>
+                                        <td><input type="number" name="size_5" class="size"></td>
+                                    </tr>
+                                    <tr id="changeSubnetRow">
+                                        <td>Numero de subredes</td>
+                                        <td>
+                                            <input type="number" name="" id="numSubnet" value="5">
+                                            <button id="changeSubnet">Cambiar</button>
+                                        </td>
+                                    </tr>
+                                    <tr id="errorRow">
+                                        <!-- error message -->
+                                        <td colspan="2">
+                                            <p id="errorMessage">
+
+                                            </p>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
                             </table>
                         </td>
                     </tr>
@@ -76,6 +89,7 @@
                             <button type="reset" id="submit">Subir</button>
                         </td>
                     </tr>
+
                 </tbody>
             </table>
         </form>
